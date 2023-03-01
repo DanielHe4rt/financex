@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Payments\CreatePayment;
-use Illuminate\Http\Request;
+use App\Http\Requests\CreatePaymentRequest;
 use Symfony\Component\HttpFoundation\Response;
 
 class PaymentsController extends Controller
 {
     public function postNewPayment(
-        Request $request,
+        CreatePaymentRequest $request,
         CreatePayment $createPayment
-    )
+    ): Response
     {
-        $response = $createPayment->persist($request->all());
-
+        $response = $createPayment->persist($request->validated());
         return response()->json($response, Response::HTTP_CREATED);
     }
 }
