@@ -2,9 +2,9 @@
 
 namespace App\Enums;
 
-enum PaymentStatusEnum: int
+enum PaymentStatusEnum: string
 {
-    case CREATED = 1;
-    case APPROVED = 2;
-    case DENIED = 3;
+    case CREATED = 'created';
+    case APPROVED = 'approved';
+    case DENIED = 'denied';
 }

@@ -195,6 +195,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Financex Service Providers...
+         */
+        \App\Providers\Financex\PaymentServiceProvider::class
+
     ],
 
     /*

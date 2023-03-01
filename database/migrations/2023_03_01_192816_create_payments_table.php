@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('card_hash');
-            $table->integer('status');
+            $table->string('status', 40);
             $table->integer('value');
             $table->timestamps();
         });
