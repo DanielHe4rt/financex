@@ -22,7 +22,7 @@ class PaymentFactory extends Factory
         return [
             'card_hash' => Hash::make($cardHash),
             'value' => rand(1000, 10000),
-            'status' => PaymentStatusEnum::CREATED
+            'status' => PaymentStatusEnum::CREATED,
         ];
     }
 }
