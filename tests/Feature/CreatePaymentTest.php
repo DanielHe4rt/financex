@@ -22,9 +22,8 @@ class CreatePaymentTest extends TestCase
             'value' => 10000
         ];
 
-        $response = $this->postJson(route('payments.store'), $payload);
-
-        $response->assertStatus(Response::HTTP_CREATED)
+        $this->postJson(route('payments.store'), $payload)
+            ->assertStatus(Response::HTTP_CREATED)
             ->assertJsonStructure(['id', 'status']);
 
         $this->assertDatabaseHas('payments', [
@@ -45,9 +44,8 @@ class CreatePaymentTest extends TestCase
         ];
 
 
-        $response = $this->postJson(route('payments.store'), $payload);
-
-        $response->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
+        $this->postJson(route('payments.store'), $payload)
+            ->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY)
             ->assertJsonValidationErrors([
                 'card.card_number',
                 'card.expiration',

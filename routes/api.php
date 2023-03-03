@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('/payments')->group(function () {
     Route::get('/{paymentId}', [PaymentsController::class, 'getPayment'])->name('payments.find');
     Route::post('/', [PaymentsController::class, 'postNewPayment'])->name('payments.store');
+    Route::delete('/{paymentId}', [PaymentsController::class, 'deletePayment'])->name('payments.cancel');
 });
