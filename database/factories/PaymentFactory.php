@@ -14,7 +14,7 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         $cardHash = json_encode([
-            'card_number' => 21321,
+            'card_number' => '123412341234123',
             'card_holder' => 'danielhe4rt',
             'expiration' => '2025-05',
             'cvv' => '123'
